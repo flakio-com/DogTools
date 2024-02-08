@@ -1,0 +1,23 @@
+body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1.5px solid black;
+}
+
+#ageCalculator {
+    margin: auto;
+    text-align: center;
+}
+
+#timeResults {
+
+}
