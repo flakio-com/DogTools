@@ -1,35 +1,36 @@
-function startCountdown(dateSelect, hourSelect, minSelect, secSelect, zoneSelect) {
-    var today = new Date().toISOString().substring(0, 10);
-    document.getElementById(dateSelect).value = today;
-    var now = new Date();
+var today = new Date().toISOString().substring(0, 10);
+document.getElementById('dateSelector1').value = today;
+var now = new Date();
 
-    // Extract the hours, minutes and seconds
-    var hours = String(now.getHours()).padStart(2, '0');
-    var minutes = String(now.getMinutes()).padStart(2, '0');
-    var seconds = String(now.getSeconds()).padStart(2, '0');
+// Extract the hours, minutes and seconds
+var hours = String(now.getHours()).padStart(2, '0');
+var minutes = String(now.getMinutes()).padStart(2, '0');
+var seconds = String(now.getSeconds()).padStart(2, '0');
 
-    // Set them in the appropriate select elements
-    document.getElementById(hourSelect).value = hours;
-    document.getElementById(minSelect).value = minutes;
-    document.getElementById(secSelect).value = seconds;
+// Set them in the appropriate select elements
+document.getElementById('hourSelector1').value = hours;
+document.getElementById('minuteSelector1').value = minutes;
+document.getElementById('secondSelector1').value = seconds;
 
-    var intervalId;
+var intervalId;
+
+function startCountdown() {
     if (intervalId) {
         clearInterval(intervalId);
     }
 
-    var dateSelector = document.getElementById(dateSelect);
-    var hourSelector = document.getElementById(hourSelect);
-    var minuteSelector = document.getElementById(minSelect);
-    var secondSelector = document.getElementById(secSelect);
-    var timezoneSelector = document.getElementById(zoneSelect);
+    var dateSelector1 = document.getElementById('dateSelector1');
+    var hourSelector1 = document.getElementById('hourSelector1');
+    var minuteSelector1 = document.getElementById('minuteSelector1');
+    var secondSelector1 = document.getElementById('secondSelector1');
+    var timezoneSelector1 = document.getElementById('timezoneSelector1');
 
-    var selectedDate = new Date(dateSelector.value + "T" + hourSelector.value + ":" + minuteSelector.value + ":" + secondSelector.value);
+    var selectedDate = new Date(dateSelector1.value + "T" + hourSelector1.value + ":" + minuteSelector1.value + ":" + secondSelector1.value);
 
     function calculateTime() {
         var now = new Date();
-        var selectedDateTimezoneAdjusted = new Date(selectedDate.toLocaleString("en-US", { timeZone: timezoneSelector.value }));
-        now = new Date(now.toLocaleString("en-US", { timeZone: timezoneSelector.value }));
+        var selectedDateTimezoneAdjusted = new Date(selectedDate.toLocaleString("en-US", { timeZone: timezoneSelector1.value }));
+        now = new Date(now.toLocaleString("en-US", { timeZone: timezoneSelector1.value }));
         var diff = now - selectedDateTimezoneAdjusted;
 
         var seconds = Math.floor(diff / 1000);
@@ -58,13 +59,6 @@ function startCountdown(dateSelect, hourSelect, minSelect, secSelect, zoneSelect
         document.getElementById('humanHours1').innerHTML = String(hours).padStart(2, '0')
         document.getElementById('humanMinutes1').innerHTML = String(minutes).padStart(2, '0')
         document.getElementById('humanSeconds1').innerHTML = String(seconds).padStart(2, '0')
-        document.getElementById('humanYears2').innerHTML = String(years).padStart(2, '0')
-        document.getElementById('humanMonths2').innerHTML = String(months).padStart(2, '0')
-        document.getElementById('humanWeeks2').innerHTML = String(weeks).padStart(2, '0')
-        document.getElementById('humanDays2').innerHTML = String(days).padStart(2, '0')
-        document.getElementById('humanHours2').innerHTML = String(hours).padStart(2, '0')
-        document.getElementById('humanMinutes2').innerHTML = String(minutes).padStart(2, '0')
-        document.getElementById('humanSeconds2').innerHTML = String(seconds).padStart(2, '0')
 
         var dogYears = Math.floor(years * 7);
         var dogMonths = Math.floor(months * 7);
@@ -107,38 +101,14 @@ function startCountdown(dateSelect, hourSelect, minSelect, secSelect, zoneSelect
         document.getElementById('dogHours1').innerHTML = String(dogHours).padStart(2, '0')
         document.getElementById('dogMinutes1').innerHTML = String(dogMinutes).padStart(2, '0')
         document.getElementById('dogSeconds1').innerHTML = String(dogSeconds).padStart(2, '0')
-        document.getElementById('dogYears2').innerHTML = String(dogYears).padStart(2, '0')
-        document.getElementById('dogMonths2').innerHTML = String(dogMonths).padStart(2, '0')
-        document.getElementById('dogWeeks2').innerHTML = String(dogWeeks).padStart(2, '0')
-        document.getElementById('dogDays2').innerHTML = String(dogDays).padStart(2, '0')
-        document.getElementById('dogHours2').innerHTML = String(dogHours).padStart(2, '0')
-        document.getElementById('dogMinutes2').innerHTML = String(dogMinutes).padStart(2, '0')
-        document.getElementById('dogSeconds2').innerHTML = String(dogSeconds).padStart(2, '0')
     }
 
     // update every second
     intervalId = setInterval(calculateTime, 1000);
 }
 
-
-
-
-
-
-
-let mainIds = ['dateSelector', 'hourSelector', 'minuteSelector', 'secondSelector', 'timezoneSelector'];
-const addNum = num => {
-    let newArr = []
-    for (let i = 0; i < mainIds.length; i++) {
-        newArr.push(mainIds[i] + num)
-    }
-    return newArr.toString()
-}
-
-
+// Add an event listener for the DOMContentLoaded event
 document.addEventListener('DOMContentLoaded', function () {
-    startCountdown('dateSelector1', 'hourSelector1', 'minuteSelector1', 'secondSelector1', 'timezoneSelector1');
-    startCountdown('dateSelector2', 'hourSelector2', 'minuteSelector2', 'secondSelector2', 'timezoneSelector2');
+    // Start the countdown when the page has finished loading
+    startCountdown();
 });
-
-// startCountdown('dateSelector2')
