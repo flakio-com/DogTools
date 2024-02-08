@@ -13,30 +13,83 @@
 
     </header>
     <div class="section">
-        <div id="ageCalculator">
-            <form>
+        
+        <div id="timeResults">
+            <h1>Dog 1</h1>
+            <div class="sideBySide">
                 <p>Select a start date:</p>
-                <input type="date" id="dateSelector">
-
+                <input type="date" id="dateSelector1" value="02/02/1999">
                 <p>Select time:</p>
-                <select id="hourSelector">
+                <select id="hourSelector1">
                 </select> :
-                <select id="minuteSelector">
+                <select id="minuteSelector1">
                 </select> :
-                <select id="secondSelector">
+                <select id="secondSelector1">
                 </select>
-
                 <p>Select Timezone:</p>
-                <select id="timezoneSelector" class="dropdown">
+                <select id="timezoneSelector1" class="dropdown">
                     <option value="America/New_York">New York, USA (UTC-5:00)</option>
                 </select>
-
-            </form><button id="dogAge" onclick="startCountdown()">Start</button>
-            <div id="timeResults">
-                <h2>Human time </h2>
-                <p id="countdown"></p>
-                <h2>Dog time </h2>
-                <p id="dogYears"></p>
+                <button id="dogAge1" onclick="startCountdown()">Start</button>
+            </div>
+            <div class="sideBySide">
+                <h2>Age in human time:</h2>
+                <p>Years: <span id="humanYears1"></span></p>
+                <p>Months: <span id="humanMonths1"></span></p>
+                <p>Weeks: <span id="humanWeeks1"></span></p>
+                <p>Days: <span id="humanDays1"></span></p>
+                <p>Hours: <span id="humanHours1"></span></p>
+                <p>Minutes: <span id="humanMinutes1"></span></p>
+                <p>Seconds: <span id="humanSeconds1"></span></p>
+            </div>
+            <div class="sideBySide">
+                <h2>Age in doggy time:</h2>
+                <p>Years: <span id="dogYears1"></span></p>
+                <p>Months: <span id="dogMonths1"></span></p>
+                <p>Weeks: <span id="dogWeeks1"></span></p>
+                <p>Days: <span id="dogDays1"></span></p>
+                <p>Hours: <span id="dogHours1"></span></p>
+                <p>Minutes: <span id="dogMinutes1"></span></p>
+                <p>Seconds: <span id="dogSeconds1"></span></p>
+            </div>
+        </div>
+        <div id="timeResults">
+            <h1>Dog 2</h1>
+            <div class="sideBySide">
+                <p>Select a start date:</p>
+                <input type="date" id="dateSelector2">
+                <p>Select time:</p>
+                <select id="hourSelector2">
+                </select> :
+                <select id="minuteSelector2">
+                </select> :
+                <select id="secondSelector2">
+                </select>
+                <p>Select Timezone:</p>
+                <select id="timezoneSelector2" class="dropdown">
+                    <option value="America/New_York">New York, USA (UTC-5:00)</option>
+                </select>
+                <button id="dogAge2" onclick="startCountdown()">Start</button>
+            </div>
+            <div class="sideBySide">
+                <h2>Age in human time:</h2>
+                <p>Years: <span id="humanYears2"></span></p>
+                <p>Months: <span id="humanMonths2"></span></p>
+                <p>Weeks: <span id="humanWeeks2"></span></p>
+                <p>Days: <span id="humanDays2"></span></p>
+                <p>Hours: <span id="humanHours2"></span></p>
+                <p>Minutes: <span id="humanMinutes2"></span></p>
+                <p>Seconds: <span id="humanSeconds2"></span></p>
+            </div>
+            <div class="sideBySide">
+                <h2>Age in doggy time:</h2>
+                <p>Years: <span id="dogYears2"></span></p>
+                <p>Months: <span id="dogMonths2"></span></p>
+                <p>Weeks: <span id="dogWeeks2"></span></p>
+                <p>Days: <span id="dogDays2"></span></p>
+                <p>Hours: <span id="dogHours2"></span></p>
+                <p>Minutes: <span id="dogMinutes2"></span></p>
+                <p>Seconds: <span id="dogSeconds2"></span></p>
             </div>
             <script src="AgeCalculator/time.js"></script>
             <script src="AgeCalculator/script.js"></script>

@@ -13,11 +13,8 @@ body {
     border: 1.5px solid black;
 }
 
-#ageCalculator {
-    margin: auto;
-    text-align: center;
-}
-
 #timeResults {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
